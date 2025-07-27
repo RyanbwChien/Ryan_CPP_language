@@ -4,6 +4,7 @@ char name[] = "fdjfkdfj";  // ✅ 編譯器推導出大小為 13（含 \0）
 
 struct Ryan{
         char name[100] = "jidjfijdijf";
+        
 };
 
 class Ryan_test{
@@ -20,6 +21,7 @@ class Ryan_test{
 int main(){
     Ryan_test RR("Ryan");
     struct Ryan Ry;
+    std::cout<< ((char*)(&Ry) + 4) <<std::endl;
     std::cout<<RR.sumation(5,3)<<std::endl;
     std::cout<<RR.name<<std::endl;
     std::cout<<Ry.name<<std::endl;
