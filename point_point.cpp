@@ -5,6 +5,8 @@ int x=3,y=4,z=5;
 int* intergl[]={&x,&y,&z};
 int** p_intergl = intergl;
 
+int *px = &x;
+
 
 int xx = 33;
 int *p=&xx;
