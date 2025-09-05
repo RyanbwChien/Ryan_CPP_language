@@ -1,7 +1,7 @@
  #include<iostream>
 
  int arr[] = {3,6,9};
- int *arr2[] = {3,6,9};
+ int *arr2[] = {&arr[0],&arr[1],&arr[2]};
  int main(){
     int len = sizeof(arr) / sizeof(arr[0]);  // 正確取得元素數量
     std::cout<<sizeof(arr)<<std::endl;

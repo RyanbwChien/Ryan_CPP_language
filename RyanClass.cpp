@@ -11,7 +11,8 @@ class Ryan_test{
     // std::string name;
     public:
         std::string name;
-        Ryan_test(std::string n): name(n){};
+        int age;
+        Ryan_test(std::string n, int a): name(n), age(a){};
         int sumation(int a, int b){
             return a + b;
         }
@@ -19,7 +20,7 @@ class Ryan_test{
 };
  
 int main(){
-    Ryan_test RR("Ryan");
+    Ryan_test RR("Ryan", 43);
     struct Ryan Ry;
     std::cout<< ((char*)(&Ry) + 4) <<std::endl;
     std::cout<<RR.sumation(5,3)<<std::endl;

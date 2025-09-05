@@ -1,5 +1,7 @@
 #include<iostream>
 using namespace std;
+#define kk 100
+
 
 int fib(int n){
     // int result;
@@ -15,13 +17,14 @@ int fib(int n){
 char** argv;
 char x = 'A', y = 'B', z = 'C';
 
-char *p = "ABC";
+// char *p = "ABC";
 // int *p = 3;
 
 // argv[] = {&x,&y,&z};
 
 int main(int arg, char** argv){
     int n = 10;
-    std::cout<<fib(n);
+    std::cout<<fib(n)<< endl;
+    std::cout<<kk<< endl;
     return 0;
 }
