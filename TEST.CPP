@@ -1,6 +1,8 @@
 #include <iostream>
 
 int arr[] = {5,9,20};
+// char *arrs[] = {'X','Y','Z'};
+char *arrs[] = {"X","Y","Z"};
 int x=2;
 int y=4;
 int z=8;
