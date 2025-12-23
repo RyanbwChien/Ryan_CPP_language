@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  main_api:
+    # image: my_main_api
+    # 自訂義 IMAGE名稱
+    # build: . #使用 當前目錄 的 Dockerfile 來 build image
+    # 在 Docker Compose 裡：
+    # build: 是 每個 service 的屬性，不能寫在 services: 外面。
+    # 每個 service 要 build image，都必須自己指定 build: 或直接用 image: 指定現有 image。
+    image: nfopt_ai_api:last
+    container_name: main_api
+    command: ["python", "HuijiaOld_app_new_non_stream.py"]
+    ports:
+      - "9000:9000"
+    environment:
+      - TOKEN_API_HOST=main_api
+      - TOKEN_API_PORT=9000
+    volumes:
+      - ./.env.prod:/app/.env.prod
+      - ./DF_Agent_Plot/plots:/app/DF_Agent_Plot/plots
+      - ./detail_report_photo:/app/detail_report_photo
+  token_api:
+    # build: . 
+    #使用 當前目錄 的 Dockerfile 來 build image
+    image: nfopt_ai_api:last
+    container_name: token_api
+    command: ["python", "HuijiaOld_Token_API_Server.py"]
+    ports:
+      - "9001:9001"
+    environment:
+      - TOKEN_API_HOST=token_api
+      - TOKEN_API_PORT=9001
+    volumes:
+      - ./.env.prod:/app/.env.prod
+      - ./DF_Agent_Plot/plots:/app/DF_Agent_Plot/plots
+      - ./detail_report_photo:/app/detail_report_photo
